@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Poppins-BoldItalic";
+    src: url(./assets/fonts/Poppins-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Italic";
+    src: url(./assets/fonts/Poppins-Italic.ttf);
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light_red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --off_white: hsl(0, 0%, 94%);
+    --light_grey: hsl(0, 0%, 86%);
+    --smokey_grey: hsl(0, 1%, 44%);
+    --off_black: hsl(0, 0%, 8%);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background-color: var(--off_white);
+}
+
+
+.card {
+    width: 100%;
+    height: auto;
+    max-width: 52.5rem;
+    background-color: var(--white);
+    position: relative;
+    top: 10%;
+    margin: auto auto;
+    padding: 3.5rem;
+    border-radius: 1rem;
+    border-bottom-right-radius: 10rem;
+}
+
+form {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--light_grey);
+}
+
+.form_group {
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+    position: relative;
+}
+
+.form_group label {
+    color: var(--smokey_grey);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: "Poppins-Bold", sans-serif;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.form_group input {
+    text-transform: uppercase;
+    font-family: "Poppins-Bold", sans-serif;
+    font-weight: bold;
+    padding: .75rem 1.5rem;
+    width: 100%;
+    border: unset;
+    border: 1px solid var(--light_grey);
+    outline: none;
+    font-size: 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.error {
+    display: none;
+    color: var(--light_red);
+    font-style: italic;
+}
+
+.form_group input[error] {
+    border: 1px solid var(--light_red);
+}
+
+.form_group label[error] {
+    color: var(--light_red);
+}
+
+.form_group input[error]+.error {
+    display: block;
+    font-family: "Poppins-Italic", sans-serif;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.form_group input:focus {
+    border: 1px solid var(--purple);
+}
+
+button[type="submit"] {
+    padding: 1.5rem;
+    background-color: var(--purple);
+    border: unset;
+    outline: unset;
+    margin-left: 6rem;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(100%);
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--off_black);
+}
+
+button[type="submit"] i {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: block;
+    mask: url('/assets/images/icon-arrow.svg') center / contain no-repeat;
+    -webkit-mask: url('/assets/images/icon-arrow.svg') center / contain no-repeat;
+    background-color: var(--white);
+}
+
+h2 {
+    color: var(--off_black);
+    line-height: 110%;
+    letter-spacing: -2%;
+    font-family: "Poppins-BoldItalic", sans-serif;
+    font-weight: 900;
+    font-size: 6.5rem;
+}
+
+h2:first-of-type {
+    margin-top: 3rem;
+}
+
+h2 span {
+    color: var(--purple);
+}
+
+@media (max-width:1024px) {
+
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:767px) {
+
+    html,
+    body {
+        font-size: 12px;
+    }
+
+    form {
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .form_group {
+        width: calc(33.33% - 2rem);
+    }
+
+    button[type="submit"] {
+        display: block;
+        width: fit-content;
+        padding: .75rem;
+        transform: none;
+        position: absolute;
+        top: calc(100% - 1.5rem);
+        margin-left: unset;
+    }
+
+    button[type="submit"] i {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .form_group input {
+        font-size: 0.7rem;
+        width: 100%;
+    }
+
+    .form_group label {
+        letter-spacing: .5px;
+        font-size: 0.875rem;
+    }
+}
